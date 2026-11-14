@@ -23,7 +23,7 @@ if ($title === '') {
 }
 
 if (!isset($_FILES['image']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
-    echo json_encode(['status' => 'error', 'message' => 'Please select a valid image file.']);
+    echo json_encode(['status' => 'error', 'message' => 'Please select a valid image files.']);
     exit;
 }
 
