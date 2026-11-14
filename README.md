@@ -1,4 +1,4 @@
-# PinPulse-PHP 📌
+# PinGallery 📌
 A modern, Pinterest-style image gallery web application built with **Core PHP**, **MySQL**, and **AJAX** featuring seamless CRUD operations, user authentication, and a responsive masonry grid layout.
 
 ![UI/UX Prototype](https://img.shields.io/badge/PHP-8.x-blue?style=flat&logo=php)
