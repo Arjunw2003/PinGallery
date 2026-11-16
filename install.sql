@@ -20,6 +20,6 @@ CREATE TABLE IF NOT EXISTS images (
     CONSTRAINT fk_images_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- Password for 'admin' is: password123
+-- Password for 'admin' is: arjun123
 INSERT INTO users (username, password) VALUES
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+('admin', '$2y$12$9O682n.z4ThNw.bWNjQ2d.PoI4wnf.p3c/zeZYOWm0zE7M3t35DBC');
