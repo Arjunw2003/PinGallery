@@ -217,7 +217,7 @@ $(function() {
         });
     });
 
-    // Delete via AJAX with confirmation and fadeOut
+    // Delete
     $(document).on('click', '.delete-btn', function() {
         if (!confirm('Are you sure you want to delete this image?')) {
             return;

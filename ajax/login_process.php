@@ -1,5 +1,4 @@
 <?php
-// Sabhi PHP errors aur exceptions ko catch karke JSON me convert karne ke liye handlers
 set_exception_handler(function($e) {
     header('Content-Type: application/json');
     echo json_encode(['status' => 'error', 'message' => 'Exception: ' . $e->getMessage()]);
@@ -18,7 +17,6 @@ set_error_handler(function($severity, $message, $file, $line) {
 session_start();
 header('Content-Type: application/json');
 
-// Database config file include karein
 $db_file = __DIR__ . '/../config/db.php';
 if (!file_exists($db_file)) {
     echo json_encode(['status' => 'error', 'message' => 'Database config file nahi mili! Path check karein: ' . $db_file]);
@@ -46,7 +44,6 @@ if ($username === '' || $password === '') {
     exit;
 }
 
-// Prepare statement
 $stmt = mysqli_prepare($conn, "SELECT id, username, password FROM users WHERE username = ? LIMIT 1");
 if (!$stmt) {
     echo json_encode(['status' => 'error', 'message' => 'SQL Prepare Error: ' . mysqli_error($conn)]);
