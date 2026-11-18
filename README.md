@@ -26,6 +26,17 @@ A modern, Pinterest-style image gallery web application built with **Core PHP**,
 
 ---
 
+---
+
+## ▶️ How to Run the Project
+
+- **Open your Terminal or Command Prompt in the project root folder:**    cd path/project_name
+- **Start the local development server:**    php -S localhost:8000
+- **Open your web browser and go directly to the login page:**
+- http://localhost:8000/index.php
+
+---
+
 ## 📂 Project Directory Structure
 
 ```text
