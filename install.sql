@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS pinterest_gallery CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE pinterest_gallery;
 USE pinterest_gallery;
 
 CREATE TABLE IF NOT EXISTS users (
@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS images (
     CONSTRAINT fk_images_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- Password for 'admin' is: arjun123
+-- Username: admin
+-- Password: arjun123
 INSERT INTO users (username, password) VALUES
 ('admin', '$2y$12$9O682n.z4ThNw.bWNjQ2d.PoI4wnf.p3c/zeZYOWm0zE7M3t35DBC');
