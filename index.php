@@ -51,10 +51,17 @@ require_once 'includes/header.php';
                 <input type="password" class="form-control" name="password" required>
             </div>
 
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" name="remember_me" value="1">
-                <label class="form-check-label">Remember Me</label>
-            </div>
+            <div class="form-check mb-3">
+    <input type="checkbox"
+           class="form-check-input"
+           id="remember_me"
+           name="remember_me"
+           value="1">
+
+    <label class="form-check-label" for="remember_me">
+        Remember Me
+    </label>
+</div>
 
             <button type="submit" class="btn btn-primary w-100" id="loginBtn">
                 Log In
