@@ -21,6 +21,15 @@ mysqli_stmt_close($stmt);
 
         <a class="navbar-brand fw-bold" href="dashboard.php">Gallery</a>
 
+        <!-- Search Box -->
+        <div class="d-flex gap-2 mx-auto">
+            <input type="search"
+                   id="imageSearch"
+                   class="form-control"
+                   placeholder="🔍 Search images..."
+                   style="width: 250px; ">
+        </div>
+
         <div class="d-flex gap-2">
             <button class="btn btn-success" id="openAddModalBtn">
                 + Add New Image
@@ -44,7 +53,7 @@ mysqli_stmt_close($stmt);
 
         <?php foreach ($images as $img): ?>
 
-            <div class="masonry-item" id="pin-<?php echo (int)$img['id']; ?>">
+            <div class="masonry-item image-card" id="pin-<?php echo (int)$img['id']; ?>">
 
                 <div class="card pin-card shadow-sm border-0">
 
@@ -437,6 +446,35 @@ $(document).on('click', '.view-btn', function () {
     bootstrap.Modal.getOrCreateInstance(
         document.getElementById('viewModal')
     ).show();
+});
+
+// Search Images by Title or Description
+$(document).ready(function () {
+
+    $('#imageSearch').on('input', function () {
+
+        let searchText = $(this).val().toLowerCase().trim();
+        let found = 0;
+        let totalImages = $('.image-card').length;
+
+        $('.image-card').each(function () {
+
+            let title = $(this).find('.pin-title').text().toLowerCase();
+            let description = $(this).find('.pin-desc').text().toLowerCase();
+
+            if (title.includes(searchText) || description.includes(searchText)) {
+                $(this).show();
+                found++;
+            } else {
+                $(this).hide();
+            }
+
+        });
+
+        $('#noResults').toggle(totalImages > 0 && found === 0);
+
+    });
+
 });
 
 </script>
